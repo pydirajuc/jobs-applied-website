@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+    <link rel="stylesheet" href="scarch.css">
+</head>
+<style>
+  /* font awesome cdn link */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css');
+
+/* google fonts cdn link */
+
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+  :root{
+    --main-color:#2980b9;
+    --red:red;
+    --light-color:#777;
+    --light-bg:#eee;
+    --black:#2c3e50;
+    --white:#fff;
+    --box-shadow:0.5rem 1rem rgba(0,0,0,.1);
+    --border:.1rem solid rgba(0,0,0,.3);
+
+  }
+*{
+    font-family: "Comfortaa", cursive;
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none; border: none;
+}
+
+*::selection{
+    background-color: var(--main-color);
+    color: var(--white);
+}
+
+::-webkit-scrollbar{
+    width: .1rem;
+    height: .5rem;
+}
+::-webkit-scrollbar-track{
+    background-color: transparent;
+}
+::-webkit-scrollbar-thumb{
+    background-color: var(--main-color);
+}
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 7rem;
+    scroll-behavior: smooth;
+}
+body{
+    background-color: var(--light-bg);
+}
+section{
+    padding: 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+.heading{
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 3rem;
+    color: var(--black);
+    text-transform: capitalize;
+    padding: 1rem 0;
+}
+.btn{
+    display: inline-block;
+    margin-top: 1rem;
+    /* padding: 0.1rem 0.5rem; */
+    cursor: pointer;
+    font-size: 1.8rem;
+    color: var(--white);
+    background-color: var(--main-color);
+    border-radius: .5rem;
+    text-transform: capitalize;
+    text-align: center;
+
+}
+.btn:hover{
+    background-color: var(--black);
+}
+.flex-btn{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   column-gap: 3rem;
+   flex-wrap: wrap;
+   font-size: 1rem;
+}
+header{
+    position: sticky;
+    top: 0; left: 0; right: 0;
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+    z-index: 1000;
+}
+.header .flex{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#menu-btn{
+    font-size: 2.7rem;
+    color: var(--black);
+    cursor: pointer;
+    display: none;
+}
+.header .flex .logo{
+    font-size: 1.5rem;
+    color: var(--black);
+}
+.header .flex .logo i{
+margin-right: .4rem;
+color: var(--light-color);
+}
+.header .flex .navbar a{
+    display: inline-block;
+    padding: .1rem .4rem;
+    font-size: 1rem;
+    color: var(--light-color);
+    border-radius: .5rem;
+    text-transform: capitalize;
+}
+.header .flex .navbar a:hover{
+    background-color: var(--main-color);
+    color: var(--white);
+}
+
+.home-container{
+    background: url(premium_photo-1663126298656-33616be83c32.jpeg), rgba(0,0,0,.7) no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-blend-mode: color;
+}
+.home-container .home{
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.home-container .home form{
+    background-color: var(--white);
+    width: 40rem;
+    border-radius: .5rem;
+    padding: 2rem;
+    text-align: center;
+}
+.home-container .home form h3{
+    font-size: 3rem;
+    color: var(--black);
+    margin-bottom: 1rem;
+    text-transform: capitalize;
+}
+
+.home-container .home form p{
+    text-align: left;
+    font-size: 1.6rem;
+    color: var(--light-color);
+    padding-top: 1rem;
+}
+.home-container .home form p span{
+    color: var(--red);
+}
+.home-container .home form .input{
+    width: 100%;
+    border-radius: .5rem;
+    margin: 1rem 0;
+    background-color: var(--light-bg);
+    padding: 1rem;
+    font-size: 1rem;
+    color: var(--black);
+}
+.category .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 16rem);
+    justify-content: center;
+    align-items: flex-start;
+    gap: .5rem;
+}
+.category .box-container .box{
+    border-radius: 1rem;
+    box-shadow: var(--box-shadow);
+    border: var(--border);
+    padding: 2rem .4rem;
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.category .box-container .box i {
+    height: 2rem;
+    width: 4rem;
+    line-height: 1.8rem;
+    font-size: 1.3rem;
+    color: var(--black);
+    border-radius: .5rem;
+    background-color: var(--main-color);
+    text-align: center;
+}
+.category .box-container .box h3 {
+    font-size: 1.5rem;
+    color: var(--black);
+    text-transform: capitalize;
+    padding-block: .4rem;
+}
+.category .box-container .box span{
+    color: var(--light-color);
+    font-size: 1.6rem;
+}
+.category .box-container .box:hover{
+    background-color: var(--black);
+}
+.category .box-container .box:hover h3{
+    color: var(--white);
+}
+.category .box-container .box:hover span{
+    color: var(--white);
+}
+.category .box-container .box:hover i{
+    background-color: var(--white);
+}
+
+.jobs-container .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,20rem);
+    gap: 1.5rem;
+   
+}
+.boxes{
+    display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   text-align: center;
+}
+.jobs-container .box-container .box {
+     background-color: var(--white);
+     border-radius: var(--white);
+     border: var(--border);
+     padding: .5rem;
+     box-shadow: var(--box-shadow);
+     box-sizing: border-box;
+     overflow: hidden;
+     align-items: center;
+     flex-direction: column;
+}
+.jobs-container .box-container .box{
+       display: flex;
+       align-items: center;
+       gap: .1rem;
+       margin-bottom: 1.5rem;
+}
+.jobs-container .box-container .box .company{
+    display: flex;
+}
+
+.jobs-container .box-container .box .company img{
+    height: 6rem;
+    width: 6rem;
+    object-fit: contain;
+}
+.jobs-container .box-container .box .company h3{
+    font-size: 1.5rem;
+    color: var(--black);
+     text-overflow: ellipsis;
+    overflow-x: hidden;
+    text-transform: capitalize;
+    padding-top: 2rem;
+}
+
+.jobs-container .box-container .box .company p{
+    color: var(--light-color);
+    font-size: 1.2rem;
+}
+.jobs-container .box-container .box  .job-title{
+    font-size: 1.5rem;
+    color: var(--black);
+    text-transform: capitalize;
+    padding-top: .5rem;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+}
+.jobs-container .box-container .box .location{
+    margin-left: -10rem;
+    font-size: 1rem;
+    color: var(--light-color);
+}
+.jobs-container .box-container .box .i{
+    margin-right: .5rem;
+    color: var(--main-color);
+}
+
+.jobs-container .box-container .box .tags{
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      margin: 1rem 0;
+}
+
+.jobs-container .box-container .box .tags p{
+    padding: 1rem 1rem;
+    border-radius: .6rem;
+    background-color: var(--light-bg);
+    font-size: 1rem;
+    color: var(--light-color);
+}
+
+.jobs-container .box-container .box .tags p i{
+    margin-right: 1.5rem;
+    color: var(--black);
+}
+.jobs-container .box-container .box .fa-heart{
+    background-color: var(--light-bg);
+    border-radius: .5rem;
+    color: var(--light-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    height: 2rem;
+    width: 3rem;
+    line-height: 1.5rem;
+}
+.jobs-container .box-container .box .fa-heart:hover{
+    background-color: var(--black);
+    color: var(--white);
+}
+
+
+.footer .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 18rem);
+    gap: .5rem;
+    justify-content: center;
+    align-items: flex-start;
+}
+.footer .grid .box h3{
+    font-size: 2.5rem;
+    color: var(--black);
+    margin: 1rem 0;
+    padding-bottom: 1rem;
+    text-transform: capitalize;
+}
+.footer .grid .box a{
+    display: block;
+    padding: 1rem ;
+    font-size: 1.5rem;
+    color: var(--light-color);
+   
+}
+.footer .grid .box a i{
+    color: var(--main-color);
+    margin-right: 2rem;
+    transition: 1s linear;
+}
+.footer .grid .box a:hover i{
+    margin-right: 3rem;
+}
+.footer .credit{
+    text-align: center;
+    padding: 2rem 1rem;
+    background-color: var(--white);
+    border-top: var(--border);
+    font-size: 1rem;
+    color: var(--light-color);
+    line-height: 1rem;
+}
+.footer .credit span{
+    color: var(--main-color);
+    text-transform: capitalize;
+}
+
+
+
+/* media queries */
+@media (max-width:600px) {
+    #menu-btn{
+        display: inline-block;
+    }
+    .header .flex .navbar{
+        position: absolute;
+        top: 99%; left: 0; right: 0;
+        border-top: var(--border);
+        background-color: var(--white);
+        padding: 1rem .5rem;
+        transition: 1.2s linear;
+        clip-path: polygon(0 1%, 100% 0, 100% 100%, 0 100%);
+    
+    }
+
+    .active{
+        display: none;
+        background-color:rgb(178, 27, 27);
+        clip-path: polygon(0 1%, 100% 0, 100% 0, 0 0);
+       
+    }
+    
+   
+    .header .flex .navbar a{
+        display: block;
+        padding: 1rem 2rem;
+    }
+    .category .box-container{
+        grid-template-columns: repeat(auto-fit, 16rem);
+    }
+    .category .box-container .box{
+        flex-flow: column;
+        text-align: center;
+    }
+  
+}
+@media (max-width:450px) {
+    html{
+        font-size: 50%;
+    }
+}
+</style>
+<body>
+
+<!-- header section starts -->
+ <header class="header">
+    <section class="flex">
+        <div id="menu-btn" class="fas fa-bars-staggered"></div>
+     <a href="home.html" class="logo"><i class="fas fa-briefcase"></i>
+    JobHunt.</a>
+    <nav class="navbar">
+      <a href="home.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="jobs.html">All Jobs</a>
+      <a href="contat.html">Contact us</a>
+      <a href="login.html">account</a>
+    </nav>
+    <a href="#" class="btn" style="margin-top: 0;">post job</a>
+    </section>
+ </header>
+<!-- header section ends -->
+
+
+<!-- home sections starts -->
+<div class="home-container">
+    <section class="home">
+        <form action="" method="post">
+            <h3>find your next job</h3>
+            <p>job title <span>*</span></p>
+            <input type="text" name="title" placeholder="keyword, category or company" required maxlength="20" class="input">
+            <p>job location</p>
+            <input type="text" name="location" placeholder=" city, state or country" required maxlength="50" class="input">
+            <input type="submit" value="search job" name="search" class="btn">
+        </form>
+    </section>
+</div>
+
+<!-- home sections ends -->
+
+<!-- category section starts -->
+<section class="category">
+  <h1 class="heading">job categories</h1>
+  <div class="box-container">
+    <a href="#" class="box">
+ <i class="fas fa-code"></i>
+ <div>
+    <h3>development</h3>
+    <span>200 jobs</span>
+ </div>
+    </a>
+           <a href="#" class="box">
+            <i class="fas fa-pen"></i>
+            <div>
+               <h3>designer</h3>
+               <span>400 jobs</span>
+            </div>
+               </a>
+               <a href="#" class="box">
+                <i class="fas fa-chalkboard-user"></i>
+                <div>
+                   <h3>teacher</h3>
+                   <span>200 jobs</span>
+                </div>
+                   </a> <a href="#" class="box">
+                    <i class="fas fa-bullhorn"></i>
+                    <div>
+                       <h3>marketing</h3>
+                       <span>200 jobs</span>
+                    </div>
+                       </a>
+                       <a href="#" class="box">
+                        <i class="fas fa-headset"></i>
+                        <div>
+                           <h3>services</h3>
+                           <span>200 jobs</span>
+                        </div>
+                           </a>
+                           <a href="#" class="box">
+                            <i class="fas fa-wrench"></i>
+                            <div>
+                               <h3>engineer</h3>
+                               <span>400 jobs</span>
+                            </div>
+                               </a>
+                               <a href="#" class="box">
+                                <i class="fas fa-hand-holding-dollar"></i>
+                                <div>
+                                   <h3>finance</h3>
+                                   <span>1000 jobs</span>
+                                </div>
+                                   </a>
+                                   <a href="#" class="box">
+                                    <i class="fas fa-person-digging"></i>
+                                    <div>
+                                       <h3>labour</h3>
+                                       <span>4000 jobs</span>
+                                    </div>
+                                       </a>
+  </div>
+
+</section>
+
+
+<!-- category section ends -->
+
+<!-- jobs section starts -->
+
+<section class="jobs-container">
+  <h1 class="heading">LATEST JOB</h1>
+  <div class="boxes">
+  <div class="box-container">
+    <div class="box">
+       <div class="company">
+         <img src="download (5).png " alt="">
+          <div>
+            <h3>it infosys co.</h3>
+            <p>2 days to go</p>
+        </div>
+       </div>
+       <h3 class="job-title">senior web developer</h3>
+       <p class="location"><i class="fas fa-map-marker-alt"></i>
+        <span>vizag,india</span></p>
+        <div class="tags">
+            <p><i class="fas fa-indian-rupee-sign"></i><span>10k-25k</span></p>
+            <p><i class="fas fa-briefcase"></i><span>part-time</span></p>
+            <p><i class="fas fa-clock"></i><span> day shift</span></p>
+        </div>
+        <div class="flex-btn">
+            <a href="view-job.html" class="btn">view details</a>
+            <button type="submit" class="far fa-heart"></button>
+        </div>
+    </div>
+  </div>
+  <div class="box-container">
+   <div class="box">
+      <div class="company">
+        <img src="919827.png" alt="">
+         <div>
+           <h3>all media ltd</h3>
+           <p>2 days to go</p>
+       </div>
+      </div>
+      <h3 class="job-title">qualified developer</h3>
+      <p class="location"><i class="fas fa-map-marker-alt"></i>
+       <span>vizag,india</span></p>
+       <div class="tags">
+           <p><i class="fas fa-indian-rupee-sign"></i><span>900</span></p>
+           <p><i class="fas fa-briefcase"></i><span>fulltime</span></p>
+           <p><i class="fas fa-clock"></i><span> flexible shift</span></p>
+       </div>
+       <div class="flex-btn">
+           <a href="view-job.html" class="btn">view details</a>
+           <button type="submit" class="far fa-heart"></button>
+       </div>
+   </div>
+ </div>
+ <div class="box-container">
+   <div class="box">
+      <div class="company">
+        <img src="download (1).png" alt="">
+         <div>
+           <h3>software solutions</h3>
+           <p>posted today</p>
+       </div>
+      </div>
+      <h3 class="job-title">javascrift developer</h3>
+      <p class="location"><i class="fas fa-map-marker-alt"></i>
+       <span>vizag,india</span></p>
+       <div class="tags">
+           <p><i class="fas fa-indian-rupee-sign"></i><span>10k-25k</span></p>
+           <p><i class="fas fa-briefcase"></i><span>internship</span></p>
+           <p><i class="fas fa-clock"></i><span> night shift</span></p>
+       </div>
+       <div class="flex-btn">
+           <a href="view-job.html" class="btn">view details</a>
+           <button type="submit" class="far fa-heart"></button>
+       </div>
+   </div>
+ </div>
+ <div class="box-container">
+   <div class="box">
+      <div class="company">
+        <img src="download (2).png" alt="">
+         <div>
+           <h3>it world</h3>
+           <p>19 days ago</p>
+       </div>
+      </div>
+      <h3 class="job-title">junior front-end</h3>
+      <p class="location"><i class="fas fa-map-marker-alt"></i>
+       <span>vizag,india</span></p>
+       <div class="tags">
+           <p><i class="fas fa-indian-rupee-sign"></i><span>20k-50k</span></p>
+           <p><i class="fas fa-briefcase"></i><span>contract</span></p>
+           <p><i class="fas fa-clock"></i><span> fixed shift</span></p>
+       </div>
+       <div class="flex-btn">
+           <a href="view-job.html" class="btn">view details</a>
+           <button type="submit" class="far fa-heart"></button>
+       </div>
+   </div>
+ </div>
+ <div class="box-container">
+   <div class="box">
+      <div class="company">
+        <img src="download (3).png" alt="">
+         <div>
+           <h3>info statics</h3>
+           <p>2 days go</p>
+       </div>
+      </div>
+      <h3 class="job-title">junior assistant</h3>
+      <p class="location"><i class="fas fa-map-marker-alt"></i>
+       <span>vizag,india</span></p>
+       <div class="tags">
+           <p><i class="fas fa-indian-rupee-sign"></i><span>5000</span></p>
+           <p><i class="fas fa-briefcase"></i><span>temperary</span></p>
+           <p><i class="fas fa-clock"></i><span> flexible shifts</span></p>
+       </div>
+       <div class="flex-btn">
+           <a href="view-job.html" class="btn">view details</a>
+           <button type="submit" class="far fa-heart"></button>
+       </div>
+   </div>
+ </div>
+ <div class="box-container">
+   <div class="box">
+      <div class="company">
+        <img src="download (4).png" alt="">
+         <div>
+           <h3>mass idea</h3>
+           <p>2 days  go</p>
+       </div>
+      </div>
+      <h3 class="job-title">php developer</h3>
+      <p class="location"><i class="fas fa-map-marker-alt"></i>
+       <span>vizag,india</span></p>
+       <div class="tags">
+           <p><i class="fas fa-indian-rupee-sign"></i><span>30k-1lakh</span></p>
+           <p><i class="fas fa-briefcase"></i><span>fresher</span></p>
+           <p><i class="fas fa-clock"></i><span> fixhed shift</span></p>
+       </div>
+       <div class="flex-btn">
+           <a href="view-job.html" class="btn">view details</a>
+           <button type="submit" class="far fa-heart"></button>
+       </div>
+   </div>
+ </div>
+ </div>
+  <div style="text-align: center; margin-top: .5rem;">
+    <a href="jobs.html" class="btn">view all</a>
+  </div>
+</section>
+<!-- jobs section starts -->
+
+
+
+
+<!-- footer section starts -->
+<footer class="footer">
+    <section class="grid">
+        <div class="box">
+            <h3>quick links</h3>
+             <a href="home.html"><i class="fas fa-angle-right"></i>home</a>
+             <a href="about.html"><i class="fas fa-angle-right"></i>about</a>
+             <a href="jobs.html"><i class="fas fa-angle-right"></i>all jobs</a>
+             <a href="contat.html"><i class="fas fa-angle-right"></i>contact us</a>
+             <a href="#"><i class="fas fa-angle-right"></i>filter search</a>
+        </div>  
+           <div class="box">
+            <h3>extra links </h3>
+             <a href="#"><i class="fas fa-angle-right"></i>accounts</a>
+             <a href="login.html"><i class="fas fa-angle-right"></i>login</a>
+             <a href="register.html"><i class="fas fa-angle-right"></i>register</a>
+             <a href="#"><i class="fas fa-angle-right"></i>post job</a>
+             <a href="#"><i class="fas fa-angle-right"></i>dashboard</a>
+        </div>
+        <div class="box">
+            <h3>follow us</h3>
+            <a href="#"><i class="fab fa-facebook-f"></i>facebook</a>
+            <a href="#"><i class="fab fa-twitter"></i>twitter</a>
+            <a href="#"><i class="fab fa-instagram"></i>instagram</a>
+            <a href="#"><i class="fab fa-linkedin"></i>linkedin</a>
+            <a href="#"><i class="fab fa-youtube"></i>youtube</a>
+             
+        </div>
+    </section>
+    <div class="credit">&copy; copyright @ 2024 by <span> mr. web designer</span>| all rights reserved! |</div>
+</footer>
+
+
+
+
+<!-- footer section ends -->
+
+    <script src="scrach.js"></script>
+    
+</body>
+<script>
+  let navbar = document.querySelector('.header.flex.navbar');
+
+
+var menubtn =document.getElementById('menu-btn')
+menubtn.addEventListener('click',()=>{
+    var mynav = document.getElementsByClassName("navbar")[0]
+    mynav.classList.toggle("active")
+   
+})
+</script>
+</html>
